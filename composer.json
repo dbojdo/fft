@@ -1,0 +1,27 @@
+{
+  "name" : "webit/fft",
+  "type" : "library",
+  "description": "Web-IT FFT Library",
+  "keywords": ["fft", "ifft", "fourier", "fast fourier", "transformation", "signal"],
+  "authors": [{
+      "name": "Daniel Bojdo",
+      "email": "daniel.bojdo@web-it.eu"
+  }],
+  "require": {
+      "php": ">=5.3.3",
+      "webit/complex-number": "dev-master"
+  },
+  "require-dev": {
+      "phpunit/phpunit": "~4.2"
+  },
+  "autoload": {
+      "psr-4": {
+          "Webit\\Math\\Fft\\": "src/"
+      }
+  },
+  "autoload-dev": {
+      "psr-4": {
+          "Webit\\Math\\Fft\\Tests\\": "tests/"
+      }
+  }
+}
