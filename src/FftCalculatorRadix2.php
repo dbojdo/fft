@@ -27,16 +27,16 @@ class FftCalculatorRadix2 implements FftCalculator
         $signal = $this->prepareFttSignal($signal, $dimension);
 
         list($even, $odd) = $this->extractEvenOdd($signal);
-        $eventItems = $dimension == 2 ? $even : $this->calculateFft($even, new Dimension($dimension / 2));
+        $evenItems = $dimension == 2 ? $even : $this->calculateFft($even, new Dimension($dimension / 2));
         $oddItems = $dimension == 2 ? $odd : $this->calculateFft($odd, new Dimension($dimension / 2));
 
         $y = array();
-        for ($i = 0; $i < count($signal) / 2; $i++) {
+        for ($i = 0; $i < $dimension / 2; $i++) {
             $ith = -2 * $i * M_PI / $dimension;
             $wi = new Complex(cos($ith), sin($ith));
 
-            $y[$i] = $eventItems[$i]->add($wi->mul($oddItems[$i]));
-            $y[$i + $dimension / 2] = $eventItems[$i]->sub($wi->mul($oddItems[$i]));
+            $y[2*$i] = $evenItems[$i]->add($wi->mul($oddItems[$i]));
+            $y[2*$i + 1] = $evenItems[$i]->sub($wi->mul($oddItems[$i]));
         }
 
         return new ComplexArray($y);
