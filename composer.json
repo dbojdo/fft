@@ -9,7 +9,7 @@
   }],
   "require": {
       "php": ">=5.3.3",
-      "webit/complex-number": "dev-master"
+      "webit/complex-number": "~1.0"
   },
   "require-dev": {
       "phpunit/phpunit": "~4.2"
@@ -22,6 +22,11 @@
   "autoload-dev": {
       "psr-4": {
           "Webit\\Math\\Fft\\Tests\\": "tests/"
+      }
+  },
+  "extra": {
+      "branch-alias": {
+          "dev-master": "1.x-dev"
       }
   }
 }
