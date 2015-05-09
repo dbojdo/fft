@@ -11,7 +11,7 @@ Add the **webit/fft** into **composer.json**
 {
     "require": {
         "php": ">=5.3.2",
-        "webit/fft": "dev-master"
+        "webit/fft": "~1.0"
     }
 }
 ```
